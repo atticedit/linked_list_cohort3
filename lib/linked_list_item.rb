@@ -25,6 +25,8 @@ class LinkedListItem
   end
 
   def <=>(item)
+    return 1 if self.payload.class == Symbol and item.payload.class == String
+    return -1 if self.payload.class == String and item.payload.class == Symbol
     self.payload <=> item.payload
   end
 
