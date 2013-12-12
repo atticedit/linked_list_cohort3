@@ -4,7 +4,11 @@ class LinkedList
     if @head.nil?
       @head = LinkedListItem.new(payload)
     else
-      @head.next_list_item = LinkedListItem.new(payload)
+      current_node = @head
+      while current_node.last? == false
+        current_node = current_node.next_list_item
+      end
+      current_node.next_list_item = LinkedListItem.new(payload)
     end
   end
 
