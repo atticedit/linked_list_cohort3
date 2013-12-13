@@ -1,5 +1,9 @@
 class LinkedList
 
+  def initialize(item = nil)
+    @payload = item
+  end
+
   def add_item(payload)
     if @head.nil?
       @head = LinkedListItem.new(payload)
