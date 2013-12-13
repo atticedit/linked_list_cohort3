@@ -15,8 +15,10 @@ class LinkedList
   def get(index)
     current_node = @head
     index.times do
+      raise IndexError, 'Item at index number does not exist' if current_node.nil?
       current_node = current_node.next_list_item
     end
+    raise IndexError, 'Index number cannot be negative' if index < 0
     current_node.payload
   end
 
