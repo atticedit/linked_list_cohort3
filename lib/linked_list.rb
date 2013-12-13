@@ -39,10 +39,15 @@ class LinkedList
   def last
     return @head if @head == nil
     current_node = @head
-    until current_node.next_list_item == nil do
+    until current_node.last? do
       current_node = current_node.next_list_item
     end
     current_node.payload
+  end
+
+  def to_s
+    string = nil
+    return "| #{string}|"
   end
 
 end
