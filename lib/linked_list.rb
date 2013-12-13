@@ -5,7 +5,7 @@ class LinkedList
   end
 
   def add_item(payload)
-    if @head.nil?
+    if @head == nil
       @head = LinkedListItem.new(payload)
     else
       current_node = @head
@@ -24,6 +24,16 @@ class LinkedList
     end
     raise IndexError, 'Index number cannot be negative' if index < 0
     current_node.payload
+  end
+
+  def size
+    count = 0
+    current_node = @head
+    until current_node == nil do
+      current_node += 1
+      count += 1
+    end
+    count
   end
 
 end
