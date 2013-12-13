@@ -30,7 +30,7 @@ class LinkedList
     count = 0
     current_node = @head
     until current_node == nil do
-      current_node += 1
+      current_node = current_node.next_list_item
       count += 1
     end
     count
