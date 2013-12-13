@@ -1,7 +1,10 @@
 class LinkedList
 
-  def initialize(item = nil)
-    @payload = item
+  def initialize *payloads
+    @head = nil
+    if payloads.size == 1
+      @head = LinkedListItem.new(payloads[0])
+    end
   end
 
   def add_item(payload)
