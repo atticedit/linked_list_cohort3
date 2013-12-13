@@ -46,8 +46,18 @@ class LinkedList
   end
 
   def to_s
-    return "| |" if @head == nil
-    return "| #{@head.payload} |" if @head.next_list_item == nil
+    if @head == nil
+      string = ""
+    else @head.next_list_item == nil
+      string = "#{@head.payload}"
+      current_node = @head.next_list_item
+      while current_node do
+        string << ", #{current_node.payload}"
+        current_node = current_node.next_list_item
+      end
+      string << " "
+    end
+    return "| #{string}|"
   end
 
 end
