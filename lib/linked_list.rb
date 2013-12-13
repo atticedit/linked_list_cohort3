@@ -46,8 +46,8 @@ class LinkedList
   end
 
   def to_s
-    string = nil
-    return "| #{string}|"
+    return "| |" if @head == nil
+    return "| #{@head.payload} |" if @head.next_list_item == nil
   end
 
 end
