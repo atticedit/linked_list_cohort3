@@ -37,9 +37,12 @@ class LinkedList
   end
 
   def last
-    if @head == nil
-      @head
+    return @head if @head == nil
+    current_node = @head
+    until current_node.next_list_item == nil do
+      current_node = current_node.next_list_item
     end
+    current_node.payload
   end
 
 end
