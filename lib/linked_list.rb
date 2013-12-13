@@ -36,4 +36,10 @@ class LinkedList
     count
   end
 
+  def last
+    if @head == nil
+      @head
+    end
+  end
+
 end
