@@ -2,8 +2,8 @@ class LinkedList
 
   def initialize *payloads
     @head = nil
-    if payloads.size == 1
-      @head = LinkedListItem.new(payloads[0])
+    payloads.each do |payload|
+      add_item(payload)
     end
   end
 
