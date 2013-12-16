@@ -63,4 +63,8 @@ class LinkedList
     return "| #{string}|"
   end
 
+  def [] x
+    get x
+  end
+
 end
