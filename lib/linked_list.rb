@@ -19,14 +19,19 @@ class LinkedList
     end
   end
 
-  def get index
-    current_item = @head
-    index.times do
-      raise IndexError, 'Item at index number does not exist' if current_item.nil?
-      current_item = current_item.next_list_item
+  def retrieve i
+    @node = @head
+    i.times do
+      raise IndexError, 'Item at index number does not exist' if @node.nil?
+      @node = @node.next_list_item
     end
-    raise IndexError, 'Index number cannot be negative' if index < 0
-    current_item.payload
+    raise IndexError, 'Index number cannot be negative' if i < 0
+    @node
+  end
+
+  def get i
+    retrieve i
+    @node.payload
   end
 
   def size
@@ -60,11 +65,18 @@ class LinkedList
       end
       string << " "
     end
-    return "| #{string}|"
+    "| #{string}|"
   end
 
-  def [] x
-    get x
+  def [] i
+    get i
+  end
+
+  def []= i, payload
+    # retrieve the whole node at the given index
+    retrieve i
+    # set the payload of @node equal to payload
+    @node.payload = payload
   end
 
 end

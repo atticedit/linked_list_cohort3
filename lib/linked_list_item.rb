@@ -2,8 +2,8 @@ class LinkedListItem
 
   include Comparable
 
-  def initialize item
-    @payload = item
+  def initialize payload
+    @payload = payload
     @next_list_item = nil
   end
 
@@ -34,6 +34,10 @@ class LinkedListItem
 
   def === item
     self.object_id === item.object_id
+  end
+
+  def payload= payload
+    @payload = payload
   end
 
 end
