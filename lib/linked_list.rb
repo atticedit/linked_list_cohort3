@@ -73,9 +73,7 @@ class LinkedList
   end
 
   def []= i, payload
-    # retrieve the whole node at the given index
     retrieve i
-    # set the payload of @node equal to payload
     @node.payload = payload
   end
 
