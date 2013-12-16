@@ -2,7 +2,7 @@ class LinkedListItem
 
   include Comparable
 
-  def initialize(item)
+  def initialize item
     @payload = item
     @next_list_item = nil
   end
@@ -11,20 +11,20 @@ class LinkedListItem
 
   attr_reader:next_list_item
 
-  def next_list_item=(item)
+  def next_list_item= item
     @next_list_item = item
     raise ArgumentError, 'Next list item cannot be self' if @next_list_item == self
   end
 
   def last?
     if @next_list_item == nil
-      return true
+      true
     else
-      return false
+      false
     end
   end
 
-  def <=>(item)
+  def <=> item
     return 1 if self.payload.class == Symbol and item.payload.class == String
     return -1 if self.payload.class == String and item.payload.class == Symbol
     return 1 if self.payload.class == String and item.payload.class == Fixnum
@@ -32,7 +32,7 @@ class LinkedListItem
     self.payload <=> item.payload
   end
 
-  def ===(item)
+  def === item
     self.object_id === item.object_id
   end
 
