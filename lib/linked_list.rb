@@ -3,23 +3,23 @@ class LinkedList
   def initialize *payloads
     @head = nil
     payloads.each do |payload|
-      add_item(payload)
+      add_item payload
     end
   end
 
-  def add_item(payload)
+  def add_item payload
     if @head.nil?
-      @head = LinkedListItem.new(payload)
+      @head = LinkedListItem.new payload
     else
       current_item = @head
       until current_item.last?
         current_item = current_item.next_list_item
       end
-      current_item.next_list_item = LinkedListItem.new(payload)
+      current_item.next_list_item = LinkedListItem.new payload
     end
   end
 
-  def get(index)
+  def get index
     current_item = @head
     index.times do
       raise IndexError, 'Item at index number does not exist' if current_item.nil?
