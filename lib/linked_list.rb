@@ -87,4 +87,12 @@ class LinkedList
     end
   end
 
+  def indexOf payload
+    current_item = @head
+    count = 0
+    if current_item == @head
+      count
+    end
+  end
+
 end
