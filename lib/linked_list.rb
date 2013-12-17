@@ -20,18 +20,18 @@ class LinkedList
   end
 
   def retrieve i
-    @node = @head
+    current_item = @head
     i.times do
-      raise IndexError, 'Item at index number does not exist' if @node.nil?
-      @node = @node.next_list_item
+      raise IndexError, 'Item at index number does not exist' if current_item.nil?
+      current_item = current_item.next_list_item
     end
     raise IndexError, 'Index number cannot be negative' if i < 0
-    @node
+    current_item
   end
 
   def get i
-    retrieve i
-    @node.payload
+    current_item = retrieve i
+    current_item.payload
   end
 
   def size
@@ -73,8 +73,8 @@ class LinkedList
   end
 
   def []= i, payload
-    retrieve i
-    @node.payload = payload
+    current_item = retrieve i
+    current_item.payload = payload
   end
 
 end
