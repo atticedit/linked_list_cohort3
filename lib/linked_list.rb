@@ -79,11 +79,11 @@ class LinkedList
 
   def remove i
     current_item = retrieve i
-    if current_item.last?
-      previous_item = retrieve (i - 1)
-      previous_item.next_list_item = nil
-    elsif current_item == @head
+    if current_item == @head
       @head = current_item.next_list_item
+    else
+      previous_item = retrieve (i - 1)
+      previous_item.next_list_item = current_item.next_list_item
     end
   end
 
