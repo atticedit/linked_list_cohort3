@@ -77,4 +77,9 @@ class LinkedList
     current_item.payload = payload
   end
 
+  def remove i
+    previous_item = retrieve (i - 1)
+    previous_item.next_list_item = nil
+  end
+
 end
